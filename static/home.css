@@ -1,0 +1,24 @@
+.Header {
+    height:100px;
+    background-color: aqua;
+    color: deeppink;
+    border-bottom: 1px solid #000;
+}
+
+.nav{
+    list-style-type:none;
+}
+.nav li {
+    margin-right:20px;
+    float:left;
+
+}
+.nav li a{
+    color:#FFF;
+    font-weight:bolder;
+    text-decoration: darkslateblue;
+}
+.nav li a:hover{
+    color:#DDD;
+}
+

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div className="REG">
+<form action="Items" method='Post' id='ie'>
+        <div id=repeatafterme>
+  
+    {% csrf_token %}
+    <input type ="text" name="ItemName" placeholder="Itemname"><br>
+    <input type="number" name="Quantity" placeholder="Quantity" id='quantity' onchange="myfunc(this)"><br>
+    <input type="number" name="Price" placeholder="Price" id='price' onchange="myfunc(this)"><br>
+    <input type="date" name="Date" placeholder="Date"><br>
+    <input type="number" name="Total" placeholder="Total" id='total'><br>
+    <button onclick="AddElement()">Add </button>
+    <input type="submit">
+    </div>
+</form>
+
+<body>
+    
+    <script>
+        function myfunc(row){
+            var price = document.getElementById('price').value
+            var quantity = document.getElementById('quantity').value
+            var total = parseFloat(price)*parseFloat(quantity)
+            document.getElementById('total').value = total
+        }
+        
+        function AddElement() {
+            var itm = document.getElementById("ie");
+            var cln = itm.cloneNode(true);
+            document.getElementById("repeatafterme").appendChild(cln);
+        }
+    </script>
+</body>
+ 
+{% endblock %}
